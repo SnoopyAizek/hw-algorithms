@@ -48,3 +48,4 @@ for input in inputs:
     n = int(input[0])
     temp_list = list(map(int, input[1].split()))
     print(random_calculation(n, temp_list))
+print("Hi")
