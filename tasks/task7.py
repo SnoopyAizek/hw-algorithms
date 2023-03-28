@@ -21,3 +21,18 @@ inputs = [
 ]
 
 # тут ваше решение:
+
+
+def find_char(first_string, second_string):
+    for first_char, second_char in zip(first_string, second_string):
+        if first_char != second_char:
+            return second_char
+    return second_string[-1]
+
+
+for input in inputs:
+    first_string = list(input[0])
+    second_string = list(input[1])
+    first_string.sort()
+    second_string.sort()
+    print(find_char(first_string, second_string))
