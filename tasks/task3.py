@@ -30,7 +30,6 @@ inputs = [
 
 def random_calculation(n, temp_list):
     if n == 1:
-        print(1)
         return (1)
     random = 0
     for i in range(len(temp_list)):
