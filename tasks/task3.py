@@ -27,4 +27,25 @@ inputs = [
     ('1', '4')                   # -> 1
 ]
 
+
+def random_calculation(n, temp_list):
+    if n == 1:
+        print(1)
+        return (1)
+    random = 0
+    for i in range(len(temp_list)):
+        if i == 0 and temp_list[i] > temp_list[i + 1]:
+            random += 1
+        elif i == n - 1 and (temp_list[i] > temp_list[i - 1]):
+            random += 1
+        elif temp_list[i - 1] < temp_list[i] > temp_list[i + 1]:
+            # elif temp_list[i] > temp_list[i - 1] and temp_list[i] > temp_list [i + 1]:
+            random += 1
+    return (random)
+
+
 # тут ваше решение:
+for input in inputs:
+    n = int(input[0])
+    temp_list = list(map(int, input[1].split()))
+    print(random_calculation(n, temp_list))
