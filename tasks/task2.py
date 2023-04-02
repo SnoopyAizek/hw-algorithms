@@ -20,3 +20,15 @@ inputs = [
 ]
 
 # тут ваше решение:
+for input in inputs:
+    result = 0
+    n = 0
+    values = list(map(int, input.split()))
+    for value in values:
+        if value % 2 == 0:
+            result += 1
+        n += 1
+    if (result == 0 or result == n):
+        print('WIN')
+    else:
+        print('FAIL')

@@ -23,3 +23,9 @@ inputs = [
 ]
 
 # тут ваше решение:
+for string in inputs:
+    string_letters_numbers = "".join(char for char in string if char.isalnum()).lower()
+    if string_letters_numbers == string_letters_numbers[::-1]:
+        print('True')
+    else:
+        print('False')

@@ -21,8 +21,17 @@
 
 # Пример ввода -> вывода:
 inputs = [
-    ('19', '-1 -10 -8 0 2 0 5'),  # -> segment, 7
-    ('21', '1 2 5 4 8')           # -> jumps, 5
+    ('19', 'i love segment tree'),   # -> segment, 7
+    ('21', 'frog jumps from river')  # -> jumps, 5
 ]
 
 # тут ваше решение:
+for input in inputs:
+    quantity = input[0]
+    words = input[1].split()
+    longest_word = ''
+    for word in words:
+        if len(word) > len(longest_word):
+            longest_word = word
+    print(longest_word)
+    print(len(longest_word))

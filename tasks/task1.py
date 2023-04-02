@@ -21,3 +21,7 @@ inputs = [
 ]
 
 # тут ваше решение:
+for input in inputs:
+    a, x, b, c = list(map(int, input.split()))
+    result = a * x * x + b * x + c
+    print(str(result))

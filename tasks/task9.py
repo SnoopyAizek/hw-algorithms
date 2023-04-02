@@ -52,4 +52,35 @@ class Stack:
 
 # тут ваше решение:
 def is_correct_bracket_seq(bracket_seq):
-    pass
+    open_brackets = ['(', '[', '{']
+    close_brackets = [')', ']', '}']
+
+    if not bracket_seq:
+        return True
+    if bracket_seq[0] in close_brackets:
+        return False
+
+    for bracket in bracket_seq:
+        if bracket in open_brackets:
+            stack.push(bracket)
+        elif bracket == ')' and stack.isEmpty() == 'Not Empty' \
+                and stack.peek() == '(':
+            stack.pop()
+        elif bracket == ']' and stack.isEmpty() == 'Not Empty' \
+                and stack.peek() == '[':
+            stack.pop()
+        elif bracket == '}' and stack.isEmpty() == 'Not Empty' \
+                and stack.peek() == '{':
+            stack.pop()
+        else:
+            return False
+
+    if stack.isEmpty() == 'Not Empty':
+        return False
+    return True
+
+
+stack = Stack()
+for bracket_seq in inputs:
+    bracket_seq_list = list(bracket_seq)
+    print(is_correct_bracket_seq(bracket_seq_list))
