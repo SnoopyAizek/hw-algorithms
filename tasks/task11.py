@@ -34,5 +34,38 @@ inputs = [
 ]
 
 # тут ваше решение:
+
+
+def find_segment(data: list) -> list:
+    data.sort()
+    result_data = []
+    begin = data[0][0]
+    end = data[0][1]
+    for i in range(len(data) - 1):
+        if end < data[i + 1][0]:
+            result_data.append(f'{begin} {end}')
+            last_begin = begin
+            last_end = end
+            begin = data[i + 1][0]
+            end = data[i + 1][1]
+        elif data[i + 1][1] > end:
+            end = data[i + 1][1]
+    last_begin = int(last_begin)
+    last_end = int(last_end)
+    begin = int(begin)
+    end = int(end)
+    if last_begin > begin:
+        if last_end < end:
+            result_data.pop()
+            result_data.append(f'{begin} {end}')
+        else:
+            result_data.pop()
+            result_data.append(f'{begin} {last_end}')
+    elif last_end < end:
+        result_data.append(f'{begin} {end}')
+    return result_data
+
+
 for input in inputs:
-    break
+    clumbs_string = [number.split() for number in input]
+    print(' '.join(list(map(str, find_segment(clumbs_string)))))
