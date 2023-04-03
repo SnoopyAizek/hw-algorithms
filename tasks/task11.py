@@ -34,3 +34,5 @@ inputs = [
 ]
 
 # тут ваше решение:
+for input in inputs:
+    break

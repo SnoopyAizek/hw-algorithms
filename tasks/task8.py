@@ -25,3 +25,22 @@ inputs = [
 ]
 
 # тут ваше решение:
+
+
+def Factor(n):
+    fact_numb = []
+    divider = 2
+    while divider * divider <= n:
+        if n % divider == 0:
+            fact_numb.append(divider)
+            n //= divider
+        else:
+            divider += 1
+    if n > 1:
+        fact_numb.append(n)
+    return fact_numb
+
+
+for input in inputs:
+    i = int(input)
+    print((' ').join(map(str, Factor(i))))
