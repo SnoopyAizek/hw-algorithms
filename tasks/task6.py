@@ -24,10 +24,19 @@ inputs = [
 ]
 
 # тут ваше решение:
+
+
+def sqrt(num: int) -> bool:
+    if num == 1:
+        return False
+    while num > 1:
+        if n % 4 != 0:
+            return False
+        num /= 4
+    else:
+        return True
+
+
 for input in inputs:
     n = int(input)
-    sqrt = n ** (0.25)
-    if n == 1 or n == 4 or sqrt % 2 == 0:
-        print(True)
-    else:
-        print(False)
+    print(sqrt(n))
